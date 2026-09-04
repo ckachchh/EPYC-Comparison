@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMD Ryzen vs Intel Core Client CPU Comparison</title>
+<link rel="stylesheet" href="clientstyles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <h1>Client CPU Comparison</h1>
+    <p class="subtitle">AMD Ryzen vs Intel Core / Core Ultra &mdash; full SKU spec sheet</p>
+  </div>
+</header>
+
+<main class="container">
+  <section class="controls" aria-label="Filters">
+    <div class="controls-row">
+      <input type="search" id="search-input" placeholder="Search processors&hellip;" aria-label="Search">
+
+      <fieldset class="control control--checks" id="filter-vendor">
+        <legend>Vendor</legend>
+        <label><input type="checkbox" value="AMD" checked> AMD</label>
+        <label><input type="checkbox" value="Intel" checked> Intel</label>
+      </fieldset>
+
+      <fieldset class="control control--checks" id="filter-platform">
+        <legend>Platform</legend>
+        <label><input type="checkbox" value="Desktop" checked> Desktop</label>
+        <label><input type="checkbox" value="Mobile" checked> Mobile</label>
+      </fieldset>
+
+      <div class="control multiselect" id="filter-generation">
+        <button type="button" class="multiselect-toggle">Generation <span class="ms-count"></span></button>
+        <div class="multiselect-panel" hidden></div>
+      </div>
+
+      <label class="control">
+        <span>Cores</span>
+        <select id="filter-cores">
+          <option value="">All</option>
+        </select>
+      </label>
+
+      <button id="reset-filters" type="button" class="reset-btn">Reset</button>
+      <button id="compare-btn" type="button" class="compare-btn" disabled>Compare Selected (0)</button>
+    </div>
+  </section>
+
+  <div class="status-row">
+    <span id="row-count">Loading&hellip;</span>
+  </div>
+
+  <section id="compare-panel" class="compare-panel" hidden>
+    <div class="compare-panel-header">
+      <h2>Comparison</h2>
+      <button id="compare-close" type="button" class="reset-btn">Close</button>
+    </div>
+    <div id="compare-table-wrap"></div>
+  </section>
+
+  <div class="table-scroll">
+    <table id="cpu-table">
+      <thead>
+        <tr>
+          <th class="col-select"><span class="sr-only">Select</span></th>
+          <th data-key="vendor" data-type="text">Vendor</th>
+          <th data-key="platform" data-type="text">Platform</th>
+          <th data-key="generation" data-type="text">Generation</th>
+          <th data-key="name" data-type="text">Model</th>
+          <th data-key="npuTops" data-type="num">NPU TOPS</th>
+          <th data-key="pCores" data-type="num">Performance Cores</th>
+          <th data-key="eCores" data-type="num">Efficiency Cores</th>
+          <th data-key="lpECores" data-type="num">Low Power Efficient Core</th>
+          <th data-key="threads" data-type="num">Threads</th>
+          <th data-key="baseFreqGHz" data-type="num">Base Frequency</th>
+          <th data-key="boostFreqGHz" data-type="num">Boost Frequency</th>
+          <th data-key="cacheMB" data-type="num">Cache Memory</th>
+          <th data-key="graphicsModel" data-type="text">Graphics</th>
+          <th data-key="graphicsFreqGHz" data-type="num">Graphics Frequency (upto)</th>
+          <th data-key="lithography" data-type="text">Processor Technology</th>
+          <th data-key="tdpW" data-type="num">TDP</th>
+        </tr>
+      </thead>
+      <tbody id="cpu-table-body">
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>Data source: AMD.com and ark.intel.com official spec pages, manually researched. Refresh via <code>scripts/convert_data.py</code>.</p>
+</footer>
+
+<script src="Clientcpus.js"></script>
+<script src="clientapp.js"></script>
+</body>
+</html>

@@ -6,7 +6,7 @@
   const state = {
     all: [],
     filtered: [],
-    sortKey: "name",
+    sortKey: "listPriceUSD",
     sortDir: "asc",
     selected: new Set(),
   };
@@ -14,7 +14,6 @@
   const els = {
     search: document.getElementById("search-input"),
     vendorChecks: Array.from(document.querySelectorAll("#filter-vendor input[type=\"checkbox\"]")),
-    platformChecks: Array.from(document.querySelectorAll("#filter-platform input[type=\"checkbox\"]")),
     generationWrap: document.getElementById("filter-generation"),
     generationToggle: document.querySelector("#filter-generation .multiselect-toggle"),
     generationPanel: document.querySelector("#filter-generation .multiselect-panel"),
@@ -39,27 +38,46 @@
   // Fields shown in the side-by-side comparison panel, in order.
   const COMPARE_FIELDS = [
     { key: "vendor", label: "Vendor" },
-    { key: "platform", label: "Platform" },
     { key: "generation", label: "Generation" },
-    { key: "npuTops", label: "NPU TOPS" },
-    { key: "pCores", label: "Performance Cores" },
-    { key: "eCores", label: "Efficiency Cores" },
-    { key: "lpECores", label: "Low Power Efficient Core" },
+    { key: "codename", label: "Codename" },
+    { key: "cores", label: "Cores" },
     { key: "threads", label: "Threads" },
-    { key: "baseFreqGHz", label: "Base Frequency (GHz)" },
-    { key: "boostFreqGHz", label: "Boost Frequency (GHz)" },
-    { key: "cacheMB", label: "Cache Memory (MB)" },
-    { key: "graphicsModel", label: "Graphics" },
-    { key: "graphicsFreqGHz", label: "Graphics Frequency (upto)" },
-    { key: "lithography", label: "Processor Technology" },
-    { key: "tdpW", label: "TDP" },
+    { key: "baseFreqGHz", label: "Base Freq. (GHz)" },
+    { key: "maxBoostGHz", label: "Max Boost (GHz)" },
+    { key: "l3CacheMB", label: "L3 Cache (MB)" },
+    { key: "lithography", label: "Lithography" },
+    { key: "tdpW", label: "TDP (W)" },
+    { key: "ddrFreqMTs", label: "DDR Freq. (MT/s)" },
+    { key: "maxMemTB", label: "Max Mem (TB)" },
+    { key: "memoryChannels", label: "Memory Channels" },
+    { key: "pciLanes", label: "PCI Lanes" },
+    { key: "scalability", label: "Scalability" },
+    { key: "socketType", label: "Socket Type" },
+    { key: "listPriceUSD", label: "List Price (US$)" },
+    { key: "specrate2017Int", label: "SPECrate2017 Int" },
+    { key: "specfp2017", label: "SPECfp2017" },
+    { key: "specrate2026Int", label: "SPECrate2026 Int" },
+    { key: "specrate2026Fp", label: "SPECrate2026 FP" },
+    { key: "perfPerDollar", label: "Perf/$" },
   ];
+
+  // Numeric fields that may carry a source link (e.g. to a SPEC.org result PDF),
+  // mapped to the row property holding that URL.
+  const LINK_URL_KEYS = {
+    specrate2017Int: "specrate2017IntUrl",
+    specfp2017: "specfp2017Url",
+    specrate2026Int: "specrate2026IntUrl",
+    specrate2026Fp: "specrate2026FpUrl",
+  };
 
   function rowId(row) {
     return row.__id;
   }
 
   function displayName(row) {
+    if (row.vendor === "AMD" && !/^amd/i.test(row.name || "")) {
+      return `AMD EPYC ${row.name}`;
+    }
     return row.name || "—";
   }
 
@@ -71,18 +89,20 @@
     return value;
   }
 
-  // Renders a cell's value as text, or as a link to its official source page when
-  // the row has a sourceUrl and the column is the Model/name column.
+  // Renders a cell's value as text, or as a link to its SPEC.org source when the
+  // column has an associated URL field (see LINK_URL_KEYS) and the row has one set.
   function renderCellValue(td, row, key) {
     const val = row[key];
-    if (key === "name" && row.sourceUrl) {
+    const urlKey = LINK_URL_KEYS[key];
+    const url = urlKey ? row[urlKey] : null;
+    if (url && val !== null && val !== undefined && val !== "") {
       const link = document.createElement("a");
-      link.href = row.sourceUrl;
+      link.href = url;
       link.target = "_blank";
       link.rel = "noopener noreferrer";
       link.className = "spec-link";
       link.textContent = fmt(val);
-      link.title = "View official spec page";
+      link.title = "View SPEC.org result";
       td.appendChild(link);
     } else {
       td.textContent = fmt(val);
@@ -93,10 +113,6 @@
     return els.vendorChecks.filter((c) => c.checked).map((c) => c.value);
   }
 
-  function selectedPlatforms() {
-    return els.platformChecks.filter((c) => c.checked).map((c) => c.value);
-  }
-
   function selectedGenerations() {
     return Array.from(els.generationPanel.querySelectorAll("input[type=\"checkbox\"]:checked")).map((c) => c.value);
   }
@@ -104,17 +120,15 @@
   function applyFilters() {
     const q = els.search.value.trim().toLowerCase();
     const vendors = selectedVendors();
-    const platforms = selectedPlatforms();
     const generations = selectedGenerations();
     const cores = els.cores.value ? Number(els.cores.value) : null;
 
     state.filtered = state.all.filter((row) => {
       if (vendors.length > 0 && !vendors.includes(row.vendor)) return false;
-      if (platforms.length > 0 && !platforms.includes(row.platform)) return false;
       if (generations.length > 0 && !generations.includes(row.generation)) return false;
-      if (cores !== null && totalCores(row) !== cores) return false;
+      if (cores !== null && row.cores !== cores) return false;
       if (q) {
-        const haystack = `${displayName(row)} ${row.generation || ""}`.toLowerCase();
+        const haystack = `${displayName(row)} ${row.generation || ""} ${row.codename || ""}`.toLowerCase();
         if (!haystack.includes(q)) return false;
       }
       return true;
@@ -123,14 +137,6 @@
     updateGenerationToggleLabel();
     sortRows();
     render();
-  }
-
-  function totalCores(row) {
-    const p = typeof row.pCores === "number" ? row.pCores : 0;
-    const e = typeof row.eCores === "number" ? row.eCores : 0;
-    const lp = typeof row.lpECores === "number" ? row.lpECores : 0;
-    const total = p + e + lp;
-    return total > 0 ? total : null;
   }
 
   function updateGenerationToggleLabel() {
@@ -145,8 +151,8 @@
     const dir = sortDir === "asc" ? 1 : -1;
 
     state.filtered.sort((a, b) => {
-      let av = a[sortKey];
-      let bv = b[sortKey];
+      let av = sortKey === "name" ? displayName(a) : a[sortKey];
+      let bv = sortKey === "name" ? displayName(b) : b[sortKey];
 
       const aNull = av === null || av === undefined || av === "";
       const bNull = bv === null || bv === undefined || bv === "";
@@ -195,6 +201,8 @@
             badge.className = `vendor-badge vendor-badge--${row.vendor.toLowerCase()}`;
             badge.textContent = row.vendor;
             td.appendChild(badge);
+          } else if (col.key === "name") {
+            td.textContent = displayName(row);
           } else {
             const val = row[col.key];
             renderCellValue(td, row, col.key);
@@ -300,7 +308,7 @@
           badge.textContent = val;
           td.appendChild(badge);
         } else {
-          td.textContent = fmt(val);
+          renderCellValue(td, row, field.key);
         }
         if (val === null || val === undefined || val === "") {
           td.classList.add("cell-muted");
@@ -392,15 +400,11 @@
     for (const el of els.vendorChecks) {
       el.addEventListener("change", applyFilters);
     }
-    for (const el of els.platformChecks) {
-      el.addEventListener("change", applyFilters);
-    }
 
     els.reset.addEventListener("click", () => {
       els.search.value = "";
       els.cores.value = "";
       for (const el of els.vendorChecks) el.checked = true;
-      for (const el of els.platformChecks) el.checked = true;
       for (const el of els.generationPanel.querySelectorAll("input[type=\"checkbox\"]")) el.checked = false;
       applyFilters();
     });
@@ -423,7 +427,7 @@
     const generations = Array.from(new Set(data.map((r) => r.generation).filter(Boolean))).sort((a, b) => a.localeCompare(b));
     populateGenerationPanel(generations);
 
-    const coreCounts = Array.from(new Set(data.map((r) => totalCores(r)).filter((c) => typeof c === "number"))).sort((a, b) => a - b);
+    const coreCounts = Array.from(new Set(data.map((r) => r.cores).filter((c) => typeof c === "number"))).sort((a, b) => a - b);
     populateCoresSelect(coreCounts);
 
     initSortHandlers();

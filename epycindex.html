@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMD vs Intel Server CPU Comparison</title>
+<link rel="stylesheet" href="epycstyles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <h1>Server CPU Comparison</h1>
+    <p class="subtitle">AMD EPYC vs Intel Xeon &mdash; full SKU spec sheet</p>
+  </div>
+</header>
+
+<main class="container">
+  <section class="controls" aria-label="Filters">
+    <div class="controls-row">
+      <input type="search" id="search-input" placeholder="Search processors&hellip;" aria-label="Search">
+
+      <fieldset class="control control--checks" id="filter-vendor">
+        <legend>Vendor</legend>
+        <label><input type="checkbox" value="AMD" checked> AMD</label>
+        <label><input type="checkbox" value="Intel" checked> Intel</label>
+      </fieldset>
+
+      <div class="control multiselect" id="filter-generation">
+        <button type="button" class="multiselect-toggle">Generation <span class="ms-count"></span></button>
+        <div class="multiselect-panel" hidden></div>
+      </div>
+
+      <label class="control">
+        <span>Cores</span>
+        <select id="filter-cores">
+          <option value="">All</option>
+        </select>
+      </label>
+
+      <button id="reset-filters" type="button" class="reset-btn">Reset</button>
+      <button id="compare-btn" type="button" class="compare-btn" disabled>Compare Selected (0)</button>
+    </div>
+  </section>
+
+  <div class="status-row">
+    <span id="row-count">Loading&hellip;</span>
+  </div>
+
+  <section id="compare-panel" class="compare-panel" hidden>
+    <div class="compare-panel-header">
+      <h2>Comparison</h2>
+      <button id="compare-close" type="button" class="reset-btn">Close</button>
+    </div>
+    <div id="compare-table-wrap"></div>
+  </section>
+
+  <div class="table-scroll">
+    <table id="cpu-table">
+      <thead>
+        <tr>
+          <th class="col-select"><span class="sr-only">Select</span></th>
+          <th data-key="vendor" data-type="text">Vendor</th>
+          <th data-key="generation" data-type="text">Generation</th>
+          <th data-key="codename" data-type="text">Codename</th>
+          <th data-key="name" data-type="text">Processor</th>
+          <th data-key="cores" data-type="num">Cores</th>
+          <th data-key="threads" data-type="num">Threads</th>
+          <th data-key="baseFreqGHz" data-type="num">Base (GHz)</th>
+          <th data-key="maxBoostGHz" data-type="num">Boost (GHz)</th>
+          <th data-key="l3CacheMB" data-type="num">L3 (MB)</th>
+          <th data-key="lithography" data-type="text">Lithography</th>
+          <th data-key="tdpW" data-type="num">TDP (W)</th>
+          <th data-key="ddrFreqMTs" data-type="num">DDR (MT/s)</th>
+          <th data-key="maxMemTB" data-type="num">Max Mem (TB)</th>
+          <th data-key="memoryChannels" data-type="num">Mem Channels</th>
+          <th data-key="pciLanes" data-type="num">PCI Lanes</th>
+          <th data-key="scalability" data-type="text">Scalability</th>
+          <th data-key="socketType" data-type="text">Socket</th>
+          <th data-key="listPriceUSD" data-type="num">List Price (US$)</th>
+          <th data-key="specrate2017Int" data-type="num">SPECrate2017 Int</th>
+          <th data-key="specfp2017" data-type="num">SPECfp2017</th>
+          <th data-key="specrate2026Int" data-type="num">SPECrate2026 Int</th>
+          <th data-key="specrate2026Fp" data-type="num">SPECrate2026 FP</th>
+          <th data-key="perfPerDollar" data-type="num">Perf/$</th>
+        </tr>
+      </thead>
+      <tbody id="cpu-table-body">
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>Data source: internal SKU comparison spreadsheet. Refresh via <code>scripts/convert_data.py</code>.</p>
+</footer>
+
+<script src="epyccpus.js"></script>
+<script src="epycapp.js"></script>
+</body>
+</html>
