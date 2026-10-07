@@ -7525,7 +7525,7 @@ window.CPU_DATA = [
     "codename": "Clearwater Forest"
   },
   {
-    "generation": "AMD 6th Gen",
+    "generation": "AMD 6th Gen SP7",
     "name": "9556",
     "cores": 64,
     "baseFreqGHz": 2.75,
@@ -7561,7 +7561,7 @@ window.CPU_DATA = [
     "codename": "Venice"
   },
   {
-    "generation": "AMD 6th Gen",
+    "generation": "AMD 6th Gen SP7",
     "name": "9586F",
     "cores": 64,
     "baseFreqGHz": 3.75,
@@ -7597,7 +7597,7 @@ window.CPU_DATA = [
     "codename": "Venice"
   },
   {
-    "generation": "AMD 6th Gen",
+    "generation": "AMD 6th Gen SP7",
     "name": "9656",
     "cores": 96,
     "baseFreqGHz": 3.05,
@@ -7633,7 +7633,7 @@ window.CPU_DATA = [
     "codename": "Venice"
   },
   {
-    "generation": "AMD 6th Gen",
+    "generation": "AMD 6th Gen SP7",
     "name": "9686F",
     "cores": 96,
     "baseFreqGHz": 3.4,
@@ -7669,7 +7669,7 @@ window.CPU_DATA = [
     "codename": "Venice"
   },
   {
-    "generation": "AMD 6th Gen",
+    "generation": "AMD 6th Gen SP7",
     "name": "9G76",
     "cores": 96,
     "baseFreqGHz": 3.4,
@@ -7705,7 +7705,7 @@ window.CPU_DATA = [
     "codename": "Venice"
   },
   {
-    "generation": "AMD 6th Gen",
+    "generation": "AMD 6th Gen SP7",
     "name": "9756",
     "cores": 128,
     "baseFreqGHz": 3.15,
@@ -7741,7 +7741,7 @@ window.CPU_DATA = [
     "codename": "Venice"
   },
   {
-    "generation": "AMD 6th Gen",
+    "generation": "AMD 6th Gen SP7",
     "name": "9846",
     "cores": 168,
     "baseFreqGHz": 2.85,
@@ -7777,7 +7777,7 @@ window.CPU_DATA = [
     "codename": "Venice"
   },
   {
-    "generation": "AMD 6th Gen",
+    "generation": "AMD 6th Gen SP7",
     "name": "9966",
     "cores": 192,
     "baseFreqGHz": 2.9,
@@ -7813,7 +7813,7 @@ window.CPU_DATA = [
     "codename": "Venice"
   },
   {
-    "generation": "AMD 6th Gen",
+    "generation": "AMD 6th Gen SP7",
     "name": "9996",
     "cores": 256,
     "baseFreqGHz": 2.55,
