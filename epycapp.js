@@ -48,7 +48,7 @@
     { key: "lithography", label: "Lithography" },
     { key: "tdpW", label: "TDP (W)" },
     { key: "ddrFreqMTs", label: "DDR Freq. (MT/s)" },
-    { key: "maxMemTB", label: "Max Mem (TB)" },
+    { key: "maxMemTB", label: "Max Mem / Socket (TB)" },
     { key: "memoryChannels", label: "Memory Channels" },
     { key: "pciLanes", label: "PCI Lanes" },
     { key: "scalability", label: "Scalability" },
