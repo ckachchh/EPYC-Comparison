@@ -639,3 +639,44 @@ tbody tr.vendor-intel:hover {
     animation: none;
   }
 }
+
+/* Home button: returns to the hub page (index.html) */
+.home-btn {
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  backdrop-filter: blur(4px);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.home-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.home-btn:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+  .home-btn {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin-bottom: 14px;
+  }
+}

@@ -74,9 +74,11 @@
     return row.__id;
   }
 
+  // AMD SKUs are shown as "EPYC <model>" (no "AMD" prefix), whatever form the data uses.
   function displayName(row) {
-    if (row.vendor === "AMD" && !/^amd/i.test(row.name || "")) {
-      return `AMD EPYC ${row.name}`;
+    if (row.vendor === "AMD" && row.name) {
+      const model = row.name.replace(/^AMD\s+/i, "");
+      return /^epyc\b/i.test(model) ? model : `EPYC ${model}`;
     }
     return row.name || "—";
   }
@@ -420,6 +422,12 @@
   function init(data) {
     data.forEach((row, i) => {
       row.__id = i;
+      // Perf/$ = SPECrate2017 Int score per US$ of list price. Computed here so it
+      // survives data regeneration; a value supplied in the data takes precedence.
+      if ((row.perfPerDollar === null || row.perfPerDollar === undefined) &&
+          typeof row.specrate2017Int === "number" && typeof row.listPriceUSD === "number" && row.listPriceUSD > 0) {
+        row.perfPerDollar = Math.round((row.specrate2017Int / row.listPriceUSD) * 1000) / 1000;
+      }
     });
     state.all = data;
     state.filtered = data.slice();
@@ -438,7 +446,7 @@
   }
 
   if (!window.CPU_DATA) {
-    els.rowCount.textContent = "Failed to load CPU data (data/cpus.js missing or failed to load).";
+    els.rowCount.textContent = "Failed to load CPU data (epyccpus.js missing or failed to load).";
   } else {
     init(window.CPU_DATA);
   }

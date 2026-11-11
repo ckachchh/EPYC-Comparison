@@ -434,7 +434,7 @@
   }
 
   if (!window.CPU_DATA) {
-    els.rowCount.textContent = "Failed to load CPU data (data/cpus.js missing or failed to load).";
+    els.rowCount.textContent = "Failed to load CPU data (clientcpus.js missing or failed to load).";
   } else {
     init(window.CPU_DATA);
   }
