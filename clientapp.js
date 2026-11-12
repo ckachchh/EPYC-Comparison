@@ -9,6 +9,7 @@
     sortKey: "name",
     sortDir: "asc",
     selected: new Set(),
+    ranks: {},
   };
 
   const els = {
@@ -28,13 +29,52 @@
     comparePanel: document.getElementById("compare-panel"),
     compareTableWrap: document.getElementById("compare-table-wrap"),
     compareClose: document.getElementById("compare-close"),
+    table: document.getElementById("cpu-table"),
+    heatToggle: document.getElementById("heat-toggle"),
+    themeToggle: document.getElementById("theme-toggle"),
+    copyLink: document.getElementById("copy-link"),
   };
 
   const COLUMNS = els.headerCells.map((th) => ({
     key: th.dataset.key,
     type: th.dataset.type,
+    group: th.dataset.group || null,
     el: th,
   }));
+
+  const GROUP_OF = {};
+  for (const col of COLUMNS) {
+    if (col.group) GROUP_OF[col.key] = col.group;
+  }
+
+  // For each numeric column, the sorted list of distinct values across ALL rows.
+  // A cell's shade is its position in that list (0 = lowest, 1 = highest), so the
+  // colour stays the same for a CPU no matter which filters are active.
+  function buildRanks(data) {
+    for (const col of COLUMNS) {
+      if (col.type !== "num" || !col.group) continue;
+      const vals = Array.from(new Set(data.map((r) => r[col.key]).filter((v) => typeof v === "number"))).sort((a, b) => a - b);
+      state.ranks[col.key] = vals;
+    }
+  }
+
+  function heatLevel(key, val) {
+    const vals = state.ranks[key];
+    if (!vals || typeof val !== "number") return null;
+    if (vals.length < 2) return 1;
+    return vals.indexOf(val) / (vals.length - 1);
+  }
+
+  function applyHeat(td, key, val) {
+    const group = GROUP_OF[key];
+    if (!group) return;
+    td.classList.add("grp", `g-${group}`);
+    const t = heatLevel(key, val);
+    if (t === null) return;
+    td.classList.add("heat-cell");
+    td.style.setProperty("--a", (0.05 + 0.4 * t).toFixed(3));
+    if (t >= 0.85) td.classList.add("heat-top");
+  }
 
   // Fields shown in the side-by-side comparison panel, in order.
   const COMPARE_FIELDS = [
@@ -52,7 +92,7 @@
     { key: "graphicsModel", label: "Graphics" },
     { key: "graphicsFreqGHz", label: "Graphics Frequency (GHz, up to)" },
     { key: "lithography", label: "Processor Technology" },
-    { key: "tdpW", label: "TDP (W)" },
+    { key: "tdpW", label: "TDP (W, Intel: base\u2013max turbo)" },
   ];
 
   function rowId(row) {
@@ -71,6 +111,15 @@
     return value;
   }
 
+  // Text for one field of a row. Intel TDP is shown as
+  // "Processor Base Power–Maximum Turbo Power" (e.g. 15–57) when ARK lists both.
+  function fieldText(row, key) {
+    if (key === "tdpW" && typeof row.tdpW === "number" && typeof row.tdpMaxW === "number" && row.tdpMaxW !== row.tdpW) {
+      return `${fmt(row.tdpW)}\u2013${fmt(row.tdpMaxW)}`;
+    }
+    return fmt(row[key]);
+  }
+
   // Renders a cell's value as text, or as a link to its official source page when
   // the row has a sourceUrl and the column is the Model/name column.
   function renderCellValue(td, row, key) {
@@ -85,7 +134,10 @@
       link.title = "View official spec page";
       td.appendChild(link);
     } else {
-      td.textContent = fmt(val);
+      td.textContent = fieldText(row, key);
+      if (key === "tdpW" && typeof row.tdpMaxW === "number") {
+        td.title = `Processor Base Power ${row.tdpW} W, Maximum Turbo Power ${row.tdpMaxW} W`;
+      }
     }
   }
 
@@ -201,6 +253,7 @@
             if (val === null || val === undefined || val === "") {
               td.classList.add("cell-muted");
             }
+            applyHeat(td, col.key, val);
           }
           tr.appendChild(td);
         }
@@ -212,6 +265,7 @@
     els.rowCount.textContent = `Showing ${state.filtered.length.toLocaleString()} of ${state.all.length.toLocaleString()} SKUs`;
     updateSortIndicators();
     updateCompareButton();
+    writeUrlState();
   }
 
   function toggleSelection(row, checkbox) {
@@ -230,6 +284,7 @@
     if (!els.comparePanel.hidden) {
       renderComparePanel();
     }
+    writeUrlState();
   }
 
   function updateCompareButton() {
@@ -284,6 +339,7 @@
       const tr = document.createElement("tr");
       const labelTd = document.createElement("td");
       labelTd.className = "compare-label";
+      if (GROUP_OF[field.key]) labelTd.classList.add(`g-${GROUP_OF[field.key]}`);
       labelTd.textContent = field.label;
       tr.appendChild(labelTd);
 
@@ -300,13 +356,14 @@
           badge.textContent = val;
           td.appendChild(badge);
         } else {
-          td.textContent = fmt(val);
+          td.textContent = fieldText(row, field.key);
         }
         if (val === null || val === undefined || val === "") {
           td.classList.add("cell-muted");
         }
         if (best !== null && val === best) {
           td.classList.add("compare-best");
+          if (GROUP_OF[field.key]) td.classList.add(`g-${GROUP_OF[field.key]}`);
         }
         tr.appendChild(td);
       });
@@ -315,6 +372,7 @@
     table.appendChild(tbody);
     els.compareTableWrap.appendChild(table);
     els.comparePanel.hidden = false;
+    writeUrlState();
   }
 
   function updateSortIndicators() {
@@ -406,10 +464,128 @@
     });
   }
 
+  function initHeatToggle() {
+    const sync = () => {
+      els.table.classList.toggle("heat", els.heatToggle.checked);
+      writeUrlState();
+    };
+    els.heatToggle.addEventListener("change", sync);
+    sync();
+  }
+
   function initCompareHandlers() {
     els.compareBtn.addEventListener("click", renderComparePanel);
     els.compareClose.addEventListener("click", () => {
       els.comparePanel.hidden = true;
+      writeUrlState();
+    });
+  }
+
+  // ---------- Dark mode ----------
+  // The initial theme is set by a tiny script in <head> (saved choice, else system setting).
+  function initThemeToggle() {
+    if (!els.themeToggle) return;
+    const root = document.documentElement;
+    const sync = () => {
+      const dark = root.getAttribute("data-theme") === "dark";
+      els.themeToggle.textContent = dark ? "Light mode" : "Dark mode";
+      els.themeToggle.setAttribute("aria-pressed", dark ? "true" : "false");
+    };
+    els.themeToggle.addEventListener("click", () => {
+      const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem("cpu-theme", next); } catch (e) { /* storage blocked: theme lasts for this visit */ }
+      sync();
+    });
+    sync();
+  }
+
+  // ---------- Shareable links ----------
+  // The current view is kept in the page address, e.g.
+  //   clientindex.html?q=ryzen&vendor=AMD&cores=8&sort=boostFreqGHz&dir=desc&compare=Ryzen+7+9700X,Core+Ultra+7+265K
+  // Only non-default settings are written, so the plain page keeps a clean address.
+  let urlReady = false; // don't overwrite the incoming address until it has been read
+
+  function writeUrlState() {
+    if (!urlReady || !window.history || !window.history.replaceState) return;
+    const p = new URLSearchParams();
+    const q = els.search.value.trim();
+    if (q) p.set("q", q);
+    const vendors = selectedVendors();
+    if (vendors.length > 0 && vendors.length < els.vendorChecks.length) p.set("vendor", vendors.join(","));
+    const platforms = selectedPlatforms();
+    if (platforms.length > 0 && platforms.length < els.platformChecks.length) p.set("platform", platforms.join(","));
+    const gens = selectedGenerations();
+    if (gens.length > 0) p.set("gen", gens.join(","));
+    if (els.cores.value) p.set("cores", els.cores.value);
+    if (state.sortKey !== "name") p.set("sort", state.sortKey);
+    if (state.sortDir !== "asc") p.set("dir", state.sortDir);
+    if (!els.heatToggle.checked) p.set("shade", "off");
+    if (state.selected.size > 0) {
+      const names = state.all.filter((r) => state.selected.has(rowId(r))).map((r) => r.name);
+      p.set("compare", names.join(","));
+      if (els.comparePanel.hidden) p.set("panel", "closed");
+    }
+    const qs = p.toString().replace(/%2C/g, ","); // keep commas readable in shared links
+    const url = window.location.pathname + (qs ? "?" + qs : "") + window.location.hash;
+    try { window.history.replaceState(null, "", url); } catch (e) { /* e.g. opened from a file preview */ }
+  }
+
+  function readUrlState() {
+    const p = new URLSearchParams(window.location.search);
+    const list = (key) => (p.get(key) || "").split(",").map((s) => s.trim()).filter(Boolean);
+
+    if (p.has("q")) els.search.value = p.get("q");
+
+    const vendors = list("vendor");
+    if (vendors.length) for (const el of els.vendorChecks) el.checked = vendors.includes(el.value);
+
+    const platforms = list("platform");
+    if (platforms.length) for (const el of els.platformChecks) el.checked = platforms.includes(el.value);
+
+    const gens = list("gen");
+    for (const el of els.generationPanel.querySelectorAll("input[type=\"checkbox\"]")) {
+      el.checked = gens.includes(el.value);
+    }
+
+    const cores = p.get("cores");
+    if (cores && Array.from(els.cores.options).some((o) => o.value === cores)) els.cores.value = cores;
+
+    const sort = p.get("sort");
+    if (sort && COLUMNS.some((c) => c.key === sort)) state.sortKey = sort;
+    if (p.get("dir") === "desc") state.sortDir = "desc";
+
+    if (p.get("shade") === "off") els.heatToggle.checked = false;
+
+    const names = list("compare");
+    for (const row of state.all) {
+      if (names.includes(row.name) && state.selected.size < MAX_COMPARE) state.selected.add(rowId(row));
+    }
+    return state.selected.size >= 2 && p.get("panel") !== "closed";
+  }
+
+  function initCopyLink() {
+    if (!els.copyLink) return;
+    let timer = null;
+    const done = (ok) => {
+      els.copyLink.textContent = ok ? "Link copied" : "Copy failed";
+      els.copyLink.classList.toggle("copied", ok);
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        els.copyLink.textContent = "Copy link";
+        els.copyLink.classList.remove("copied");
+      }, 2000);
+    };
+    els.copyLink.addEventListener("click", () => {
+      writeUrlState();
+      const url = window.location.href;
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(url).then(() => done(true), () => {
+          window.prompt("Copy this link:", url);
+        });
+      } else {
+        window.prompt("Copy this link:", url);
+      }
     });
   }
 
@@ -425,13 +601,21 @@
 
     const coreCounts = Array.from(new Set(data.map((r) => totalCores(r)).filter((c) => typeof c === "number"))).sort((a, b) => a - b);
     populateCoresSelect(coreCounts);
+    buildRanks(data);
+    const openCompare = readUrlState();
+    urlReady = true;
+    initHeatToggle();
+    initCopyLink();
 
     initSortHandlers();
     initGenerationMultiselect();
     initFilterHandlers();
     initCompareHandlers();
     applyFilters();
+    if (openCompare) renderComparePanel();
   }
+
+  initThemeToggle();
 
   if (!window.CPU_DATA) {
     els.rowCount.textContent = "Failed to load CPU data (clientcpus.js missing or failed to load).";

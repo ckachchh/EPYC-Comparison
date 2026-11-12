@@ -17,6 +17,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.2,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 200,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x3d2-dual-edition.html"
   },
   {
@@ -36,6 +37,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.2,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 170,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x3d.html"
   },
   {
@@ -55,6 +57,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.2,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 170,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x.html"
   },
   {
@@ -74,6 +77,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.2,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 120,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9900x3d.html"
   },
   {
@@ -93,6 +97,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.2,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 120,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9900x.html"
   },
   {
@@ -112,6 +117,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.2,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 120,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-7-9850x3d.html"
   },
   {
@@ -131,6 +137,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.2,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 120,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-7-9800x3d.html"
   },
   {
@@ -150,6 +157,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.2,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 65,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-7-9700x.html"
   },
   {
@@ -169,6 +177,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": null,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 65,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-7-9700f.html"
   },
   {
@@ -188,6 +197,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.2,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 65,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-5-9600x.html"
   },
   {
@@ -207,6 +217,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.2,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 65,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-5-9600.html"
   },
   {
@@ -226,6 +237,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": null,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 65,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-5-9500f.html"
   },
   {
@@ -245,6 +257,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.9,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 65,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/desktops/ryzen/8000-series/amd-ryzen-7-8700g.html"
   },
   {
@@ -264,6 +277,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.8,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 65,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/desktops/ryzen/8000-series/amd-ryzen-5-8600g.html"
   },
   {
@@ -283,6 +297,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.8,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 65,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/desktops/ryzen/8000-series/amd-ryzen-5-8500g.html"
   },
   {
@@ -302,6 +317,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.6,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 65,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/desktops/ryzen/8000-series/amd-ryzen-3-8300g.html"
   },
   {
@@ -321,6 +337,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": null,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 65,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/desktops/ryzen/8000-series/amd-ryzen-7-8700f.html"
   },
   {
@@ -340,6 +357,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": null,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 65,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/desktops/ryzen/8000-series/amd-ryzen-5-8400f.html"
   },
   {
@@ -359,6 +377,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.9,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/ai-300-series/amd-ryzen-ai-9-hx-370.html"
   },
   {
@@ -378,6 +397,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.9,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/ai-300-series/amd-ryzen-ai-9-hx-375.html"
   },
   {
@@ -397,6 +417,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.9,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/ai-300-series/amd-ryzen-ai-9-365.html"
   },
   {
@@ -416,6 +437,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 3,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/ai-300-series/amd-ryzen-ai-7-350.html"
   },
   {
@@ -435,6 +457,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.9,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/ai-300-series/amd-ryzen-ai-7-345.html"
   },
   {
@@ -454,6 +477,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.9,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/ai-300-series/amd-ryzen-ai-5-340.html"
   },
   {
@@ -473,6 +497,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.8,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/ai-300-series/amd-ryzen-ai-5-330.html"
   },
   {
@@ -492,6 +517,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.9,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen-pro/ai-300-series/amd-ryzen-ai-9-hx-pro-375.html"
   },
   {
@@ -511,6 +537,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.9,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen-pro/ai-300-series/amd-ryzen-ai-9-hx-pro-370.html"
   },
   {
@@ -530,6 +557,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.9,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen-pro/ai-300-series/amd-ryzen-ai-7-pro-360.html"
   },
   {
@@ -549,6 +577,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 3,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen-pro/ai-300-series/amd-ryzen-ai-7-pro-350.html"
   },
   {
@@ -568,6 +597,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.9,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen-pro/ai-300-series/amd-ryzen-ai-5-pro-340.html"
   },
   {
@@ -587,6 +617,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 3.1,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/ai-400-series/amd-ryzen-ai-9-hx-475.html"
   },
   {
@@ -606,6 +637,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 3.1,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/ai-400-series/amd-ryzen-ai-9-hx-470.html"
   },
   {
@@ -625,6 +657,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.9,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/ai-400-series/amd-ryzen-ai-9-465.html"
   },
   {
@@ -644,6 +677,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 3.1,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/ai-400-series/amd-ryzen-ai-7-450.html"
   },
   {
@@ -663,6 +697,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.9,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/ai-400-series/amd-ryzen-ai-7-445.html"
   },
   {
@@ -682,6 +717,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.8,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/ai-400-series/amd-ryzen-ai-5-435.html"
   },
   {
@@ -701,6 +737,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.8,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/ai-400-series/amd-ryzen-ai-5-430.html"
   },
   {
@@ -720,6 +757,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 3.1,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen-pro/ai-400-series/amd-ryzen-ai-9-hx-pro-475.html"
   },
   {
@@ -739,6 +777,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 3.1,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen-pro/ai-400-series/amd-ryzen-ai-9-hx-pro-470.html"
   },
   {
@@ -758,6 +797,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.9,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen-pro/ai-400-series/amd-ryzen-ai-9-pro-465.html"
   },
   {
@@ -777,6 +817,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 3.1,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen-pro/ai-400-series/amd-ryzen-ai-7-pro-450.html"
   },
   {
@@ -796,6 +837,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.9,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen-pro/ai-400-series/amd-ryzen-ai-5-pro-440.html"
   },
   {
@@ -815,6 +857,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.8,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen-pro/ai-400-series/amd-ryzen-ai-5-pro-435.html"
   },
   {
@@ -834,6 +877,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.8,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/400-series/amd-ryzen-7-449.html"
   },
   {
@@ -853,6 +897,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.8,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/400-series/amd-ryzen-5-439.html"
   },
   {
@@ -872,6 +917,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.9,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 55,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/ai-300-series/amd-ryzen-ai-max-plus-395.html"
   },
   {
@@ -891,6 +937,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.9,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 55,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/ai-300-series/amd-ryzen-ai-max-plus-392.html"
   },
   {
@@ -910,6 +957,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.8,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 55,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/ai-300-series/amd-ryzen-ai-max-390.html"
   },
   {
@@ -929,6 +977,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.9,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 55,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/ai-300-series/amd-ryzen-ai-max-plus-388.html"
   },
   {
@@ -948,6 +997,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.8,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 55,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/ai-300-series/amd-ryzen-ai-max-385.html"
   },
   {
@@ -967,6 +1017,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.9,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 55,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen-pro/ai-max-pro-300-series/amd-ryzen-ai-max-plus-pro-395.html"
   },
   {
@@ -986,6 +1037,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.8,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 55,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen-pro/ai-max-pro-300-series/amd-ryzen-ai-max-pro-390.html"
   },
   {
@@ -1005,6 +1057,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.8,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 55,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen-pro/ai-max-pro-300-series/amd-ryzen-ai-max-pro-385.html"
   },
   {
@@ -1024,6 +1077,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.8,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 55,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen-pro/ai-max-pro-300-series/amd-ryzen-ai-max-pro-380.html"
   },
   {
@@ -1043,6 +1097,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 3,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 55,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen-pro/ai-max-pro-400-series/amd-ryzen-ai-max-plus-pro-495.html"
   },
   {
@@ -1062,6 +1117,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.8,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 55,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen-pro/ai-max-pro-400-series/amd-ryzen-ai-max-pro-490.html"
   },
   {
@@ -1081,6 +1137,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.8,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 55,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen-pro/ai-max-pro-400-series/amd-ryzen-ai-max-pro-485.html"
   },
   {
@@ -1100,6 +1157,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.8,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 45,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/200-series/amd-ryzen-9-270.html"
   },
   {
@@ -1119,6 +1177,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.7,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 45,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/200-series/amd-ryzen-7-260.html"
   },
   {
@@ -1138,6 +1197,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.6,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 45,
+    "tdpMaxW": null,
     "sourceUrl": null
   },
   {
@@ -1157,6 +1217,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.5,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 45,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/200-series/amd-ryzen-7-253.html"
   },
   {
@@ -1176,6 +1237,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.7,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/200-series/amd-ryzen-7-250.html"
   },
   {
@@ -1195,6 +1257,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.5,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/200-series/amd-ryzen-7-249.html"
   },
   {
@@ -1214,6 +1277,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.6,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 45,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/200-series/amd-ryzen-5-240.html"
   },
   {
@@ -1233,6 +1297,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.6,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/200-series/amd-ryzen-5-230.html"
   },
   {
@@ -1252,6 +1317,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.4,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 45,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/200-series/amd-ryzen-5-225.html"
   },
   {
@@ -1271,6 +1337,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.4,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/200-series/amd-ryzen-5-224.html"
   },
   {
@@ -1290,6 +1357,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.8,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/200-series/amd-ryzen-5-220.html"
   },
   {
@@ -1309,6 +1377,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.6,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 35,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/200-series/amd-ryzen-7-217.html"
   },
   {
@@ -1328,6 +1397,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.5,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/200-series/amd-ryzen-5-216.html"
   },
   {
@@ -1347,6 +1417,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.5,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/200-series/amd-ryzen-3-210.html"
   },
   {
@@ -1366,6 +1437,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.3,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/200-series/amd-ryzen-3-205.html"
   },
   {
@@ -1385,6 +1457,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.7,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen-pro/200-series/amd-ryzen-7-pro-250.html"
   },
   {
@@ -1404,6 +1477,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.6,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen-pro/200-series/amd-ryzen-5-pro-230.html"
   },
   {
@@ -1423,6 +1497,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.8,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen-pro/200-series/amd-ryzen-5-pro-220.html"
   },
   {
@@ -1442,6 +1517,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.7,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen-pro/200-series/amd-ryzen-5-pro-215.html"
   },
   {
@@ -1461,6 +1537,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.5,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen-pro/200-series/amd-ryzen-3-pro-210.html"
   },
   {
@@ -1480,6 +1557,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.2,
     "lithography": "TSMC 6nm FinFET",
     "tdpW": 45,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/100-series/amd-ryzen-7-170.html"
   },
   {
@@ -1499,6 +1577,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.4,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/100-series/amd-ryzen-7-165.html"
   },
   {
@@ -1518,6 +1597,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.2,
     "lithography": "TSMC 6nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/100-series/amd-ryzen-7-160.html"
   },
   {
@@ -1537,6 +1617,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.6,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 35,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/100-series/amd-ryzen-7-155.html"
   },
   {
@@ -1556,6 +1637,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.9,
     "lithography": "TSMC 6nm FinFET",
     "tdpW": 45,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/100-series/amd-ryzen-5-150.html"
   },
   {
@@ -1575,6 +1657,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.9,
     "lithography": "TSMC 6nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/100-series/amd-ryzen-5-130.html"
   },
   {
@@ -1594,6 +1677,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": null,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": null
   },
   {
@@ -1613,6 +1697,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.8,
     "lithography": "TSMC 6nm FinFET",
     "tdpW": 28,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/100-series/amd-ryzen-3-110.html"
   },
   {
@@ -1632,6 +1717,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.2,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 55,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/9000-series/amd-ryzen-9-9955hx3d.html"
   },
   {
@@ -1651,6 +1737,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.2,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 55,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/9000-series/amd-ryzen-9-9955hx.html"
   },
   {
@@ -1670,6 +1757,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.2,
     "lithography": "TSMC 4nm FinFET",
     "tdpW": 55,
+    "tdpMaxW": null,
     "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen/9000-series/amd-ryzen-9-9850hx.html"
   },
   {
@@ -1689,6 +1777,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.5,
     "lithography": "Intel 18A",
     "tdpW": 25,
+    "tdpMaxW": 80,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/245526/intel-core-ultra-x9-processor-388h/specifications.html"
   },
   {
@@ -1708,6 +1797,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.5,
     "lithography": "Intel 18A",
     "tdpW": 25,
+    "tdpMaxW": 80,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/246128/intel-core-ultra-x9-processor-378h/specifications.html"
   },
   {
@@ -1727,6 +1817,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.5,
     "lithography": "Intel 18A",
     "tdpW": 25,
+    "tdpMaxW": 80,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/245529/intel-core-ultra-9-processor-386h/specifications.html"
   },
   {
@@ -1746,6 +1837,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.5,
     "lithography": "Intel 18A",
     "tdpW": 25,
+    "tdpMaxW": 80,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/245523/intel-core-ultra-x7-processor-368h/specifications.html"
   },
   {
@@ -1765,6 +1857,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.5,
     "lithography": "Intel 18A",
     "tdpW": 25,
+    "tdpMaxW": 80,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/245530/intel-core-ultra-7-processor-366h/specifications.html"
   },
   {
@@ -1784,6 +1877,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.5,
     "lithography": "Intel 18A",
     "tdpW": 25,
+    "tdpMaxW": 80,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/245527/intel-core-ultra-x7-processor-358h/specifications.html"
   },
   {
@@ -1803,6 +1897,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.45,
     "lithography": "Intel 18A",
     "tdpW": 25,
+    "tdpMaxW": 80,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/245532/intel-core-ultra-7-processor-356h/specifications.html"
   },
   {
@@ -1822,6 +1917,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.4,
     "lithography": "Intel 18A",
     "tdpW": 25,
+    "tdpMaxW": 65,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/245531/intel-core-ultra-5-processor-338h/specifications.html"
   },
   {
@@ -1841,6 +1937,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.3,
     "lithography": "Intel 18A",
     "tdpW": 25,
+    "tdpMaxW": 65,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/245533/intel-core-ultra-5-processor-336h-18m-cache-up-to-4-60-ghz/specifications.html"
   },
   {
@@ -1860,6 +1957,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.5,
     "lithography": "Intel 18A",
     "tdpW": 25,
+    "tdpMaxW": 55,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/245713/intel-core-ultra-7-processor-365/specifications.html"
   },
   {
@@ -1879,6 +1977,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.5,
     "lithography": "Intel 18A",
     "tdpW": 25,
+    "tdpMaxW": 55,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/245722/intel-core-ultra-7-processor-355/specifications.html"
   },
   {
@@ -1898,6 +1997,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.45,
     "lithography": "Intel 18A",
     "tdpW": 25,
+    "tdpMaxW": 55,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/245727/intel-core-ultra-5-processor-335/specifications.html"
   },
   {
@@ -1917,6 +2017,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.45,
     "lithography": "Intel 18A",
     "tdpW": 25,
+    "tdpMaxW": 55,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/245720/intel-core-ultra-5-processor-325/specifications.html"
   },
   {
@@ -1936,6 +2037,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.3,
     "lithography": "Intel 18A",
     "tdpW": 25,
+    "tdpMaxW": 55,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/245718/intel-core-ultra-5-processor-332/specifications.html"
   },
   {
@@ -1955,6 +2057,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.3,
     "lithography": "Intel 18A",
     "tdpW": 25,
+    "tdpMaxW": 55,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/245716/intel-core-ultra-5-processor-322/specifications.html"
   },
   {
@@ -1974,6 +2077,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.6,
     "lithography": "Intel 18A",
     "tdpW": 15,
+    "tdpMaxW": 35,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/246015/intel-core-7-processor-360/specifications.html"
   },
   {
@@ -1993,6 +2097,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.6,
     "lithography": "Intel 18A",
     "tdpW": 15,
+    "tdpMaxW": 35,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/246017/intel-core-7-processor-350/specifications.html"
   },
   {
@@ -2012,6 +2117,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.5,
     "lithography": "Intel 18A",
     "tdpW": 15,
+    "tdpMaxW": 35,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/246016/intel-core-5-processor-330/specifications.html"
   },
   {
@@ -2031,6 +2137,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.5,
     "lithography": "Intel 18A",
     "tdpW": 15,
+    "tdpMaxW": 35,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/246018/intel-core-5-processor-320/specifications.html"
   },
   {
@@ -2050,6 +2157,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.3,
     "lithography": "Intel 18A",
     "tdpW": 15,
+    "tdpMaxW": 35,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/246127/intel-core-5-processor-315/specifications.html"
   },
   {
@@ -2069,6 +2177,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.3,
     "lithography": "Intel 18A",
     "tdpW": 15,
+    "tdpMaxW": 35,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/246019/intel-core-3-processor-305/specifications.html"
   },
   {
@@ -2088,6 +2197,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.3,
     "lithography": "Intel 18A",
     "tdpW": 15,
+    "tdpMaxW": 35,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/246020/intel-core-3-processor-304/specifications.html"
   },
   {
@@ -2107,6 +2217,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.35,
     "lithography": "Intel 4",
     "tdpW": 45,
+    "tdpMaxW": 115,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/236849/intel-core-ultra-9-processor-185h-24m-cache-up-to-5-10-ghz/specifications.html"
   },
   {
@@ -2126,6 +2237,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.3,
     "lithography": "Intel 4",
     "tdpW": 28,
+    "tdpMaxW": 115,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/236851/intel-core-ultra-7-processor-165h-24m-cache-up-to-5-00-ghz/specifications.html"
   },
   {
@@ -2145,6 +2257,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.25,
     "lithography": "Intel 4",
     "tdpW": 28,
+    "tdpMaxW": 115,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/236847/intel-core-ultra-7-processor-155h-24m-cache-up-to-4-80-ghz/specifications.html"
   },
   {
@@ -2164,6 +2277,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.2,
     "lithography": "Intel 4",
     "tdpW": 28,
+    "tdpMaxW": 115,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/236850/intel-core-ultra-5-processor-135h-18m-cache-up-to-4-60-ghz/specifications.html"
   },
   {
@@ -2183,6 +2297,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.2,
     "lithography": "Intel 4",
     "tdpW": 28,
+    "tdpMaxW": 115,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/236848/intel-core-ultra-5-processor-125h-18m-cache-up-to-4-50-ghz/specifications.html"
   },
   {
@@ -2202,6 +2317,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2,
     "lithography": "Intel 4",
     "tdpW": 15,
+    "tdpMaxW": 57,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/237329/intel-core-ultra-7-processor-165u-12m-cache-up-to-4-90-ghz/specifications.html"
   },
   {
@@ -2221,6 +2337,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.8,
     "lithography": "Intel 4",
     "tdpW": 9,
+    "tdpMaxW": 30,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/237508/intel-core-ultra-7-processor-164u-12m-cache-up-to-4-80-ghz/specifications.html"
   },
   {
@@ -2240,6 +2357,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.95,
     "lithography": "Intel 4",
     "tdpW": 15,
+    "tdpMaxW": 57,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/237327/intel-core-ultra-7-processor-155u-12m-cache-up-to-4-80-ghz/specifications.html"
   },
   {
@@ -2259,6 +2377,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.9,
     "lithography": "Intel 4",
     "tdpW": 15,
+    "tdpMaxW": 57,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/237328/intel-core-ultra-5-processor-135u-12m-cache-up-to-4-40-ghz/specifications.html"
   },
   {
@@ -2278,6 +2397,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.75,
     "lithography": "Intel 4",
     "tdpW": 9,
+    "tdpMaxW": 30,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/237507/intel-core-ultra-5-processor-134u-12m-cache-up-to-4-40-ghz/specifications.html"
   },
   {
@@ -2297,6 +2417,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.85,
     "lithography": "Intel 4",
     "tdpW": 15,
+    "tdpMaxW": 57,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/237330/intel-core-ultra-5-processor-125u-12m-cache-up-to-4-30-ghz/specifications.html"
   },
   {
@@ -2316,6 +2437,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.05,
     "lithography": "TSMC N3B",
     "tdpW": 30,
+    "tdpMaxW": 37,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/240961/intel-core-ultra-9-processor-288v-12m-cache-up-to-5-10-ghz/specifications.html"
   },
   {
@@ -2335,6 +2457,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2,
     "lithography": "TSMC N3B",
     "tdpW": 17,
+    "tdpMaxW": 37,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/240958/intel-core-ultra-7-processor-268v-12m-cache-up-to-5-00-ghz/specifications.html"
   },
   {
@@ -2354,6 +2477,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2,
     "lithography": "TSMC N3B",
     "tdpW": 17,
+    "tdpMaxW": 37,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/240956/intel-core-ultra-7-processor-266v-12m-cache-up-to-5-00-ghz/specifications.html"
   },
   {
@@ -2373,6 +2497,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.95,
     "lithography": "TSMC N3B",
     "tdpW": 17,
+    "tdpMaxW": 37,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/240957/intel-core-ultra-7-processor-258v-12m-cache-up-to-4-80-ghz/specifications.html"
   },
   {
@@ -2392,6 +2517,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.95,
     "lithography": "TSMC N3B",
     "tdpW": 17,
+    "tdpMaxW": 37,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/240954/intel-core-ultra-7-processor-256v-12m-cache-up-to-4-80-ghz/specifications.html"
   },
   {
@@ -2411,6 +2537,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.85,
     "lithography": "TSMC N3B",
     "tdpW": 17,
+    "tdpMaxW": 37,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/240951/intel-core-ultra-5-processor-238v-8m-cache-up-to-4-70-ghz/specifications.html"
   },
   {
@@ -2430,6 +2557,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.85,
     "lithography": "TSMC N3B",
     "tdpW": 17,
+    "tdpMaxW": 37,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/240959/intel-core-ultra-5-processor-236v-8m-cache-up-to-4-70-ghz/specifications.html"
   },
   {
@@ -2449,6 +2577,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.85,
     "lithography": "TSMC N3B",
     "tdpW": 17,
+    "tdpMaxW": 37,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/240955/intel-core-ultra-5-processor-228v-8m-cache-up-to-4-50-ghz/specifications.html"
   },
   {
@@ -2468,6 +2597,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.85,
     "lithography": "TSMC N3B",
     "tdpW": 17,
+    "tdpMaxW": 37,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/240960/intel-core-ultra-5-processor-226v-8m-cache-up-to-4-50-ghz/specifications.html"
   },
   {
@@ -2487,6 +2617,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2,
     "lithography": "TSMC N3B",
     "tdpW": 55,
+    "tdpMaxW": 160,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/245960/intel-core-ultra-9-processor-290hx-plus-36m-cache-up-to-5-50-ghz/specifications.html"
   },
   {
@@ -2506,6 +2637,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.9,
     "lithography": "TSMC N3B",
     "tdpW": 55,
+    "tdpMaxW": 160,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/245961/intel-core-ultra-7-processor-270hx-plus-30m-cache-up-to-5-30-ghz/specifications.html"
   },
   {
@@ -2525,6 +2657,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2,
     "lithography": "TSMC N3B",
     "tdpW": 125,
+    "tdpMaxW": 250,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241060/intel-core-ultra-9-processor-285k-36m-cache-up-to-5-70-ghz/specifications.html"
   },
   {
@@ -2544,6 +2677,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2,
     "lithography": "TSMC N3B",
     "tdpW": 65,
+    "tdpMaxW": 182,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241061/intel-core-ultra-9-processor-285-36m-cache-up-to-5-60-ghz/specifications.html"
   },
   {
@@ -2563,6 +2697,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2,
     "lithography": "TSMC N3B",
     "tdpW": 35,
+    "tdpMaxW": 112,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241059/intel-core-ultra-9-processor-285t-36m-cache-up-to-5-40-ghz/specifications.html"
   },
   {
@@ -2582,6 +2717,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2,
     "lithography": "TSMC N3B",
     "tdpW": 125,
+    "tdpMaxW": 250,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241063/intel-core-ultra-7-processor-265k-30m-cache-up-to-5-50-ghz/specifications.html"
   },
   {
@@ -2601,6 +2737,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": null,
     "lithography": "TSMC N3B",
     "tdpW": 125,
+    "tdpMaxW": 250,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241062/intel-core-ultra-7-processor-265kf-30m-cache-up-to-5-50-ghz/specifications.html"
   },
   {
@@ -2620,6 +2757,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": null,
     "lithography": "TSMC N3B",
     "tdpW": 65,
+    "tdpMaxW": 182,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241064/intel-core-ultra-7-processor-265f-30m-cache-up-to-5-30-ghz/specifications.html"
   },
   {
@@ -2639,6 +2777,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.95,
     "lithography": "TSMC N3B",
     "tdpW": 65,
+    "tdpMaxW": 182,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241068/intel-core-ultra-7-processor-265-30m-cache-up-to-5-30-ghz/specifications.html"
   },
   {
@@ -2658,6 +2797,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.95,
     "lithography": "TSMC N3B",
     "tdpW": 35,
+    "tdpMaxW": 112,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241065/intel-core-ultra-7-processor-265t-30m-cache-up-to-5-30-ghz/specifications.html"
   },
   {
@@ -2677,6 +2817,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2,
     "lithography": "TSMC N3B",
     "tdpW": 125,
+    "tdpMaxW": 250,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/245692/intel-core-ultra-7-processor-270k-plus-36m-cache-up-to-5-50-ghz/specifications.html"
   },
   {
@@ -2696,6 +2837,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.9,
     "lithography": "TSMC N3B",
     "tdpW": 125,
+    "tdpMaxW": 159,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/245694/intel-core-ultra-5-processor-250k-plus-30m-cache-up-to-5-30-ghz/specifications.html"
   },
   {
@@ -2715,6 +2857,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": null,
     "lithography": "TSMC N3B",
     "tdpW": 125,
+    "tdpMaxW": 159,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/245689/intel-core-ultra-5-processor-250kf-plus-30m-cache-up-to-5-30-ghz/specifications.html"
   },
   {
@@ -2734,6 +2877,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.9,
     "lithography": "TSMC N3B",
     "tdpW": 125,
+    "tdpMaxW": 159,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241067/intel-core-ultra-5-processor-245k-24m-cache-up-to-5-20-ghz/specifications.html"
   },
   {
@@ -2753,6 +2897,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": null,
     "lithography": "TSMC N3B",
     "tdpW": 125,
+    "tdpMaxW": 159,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241066/intel-core-ultra-5-processor-245kf-24m-cache-up-to-5-20-ghz/specifications.html"
   },
   {
@@ -2772,6 +2917,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.9,
     "lithography": "TSMC N3B",
     "tdpW": 65,
+    "tdpMaxW": 121,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241876/intel-core-ultra-5-processor-245-24m-cache-up-to-5-10-ghz/specifications.html"
   },
   {
@@ -2791,6 +2937,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.9,
     "lithography": "TSMC N3B",
     "tdpW": 35,
+    "tdpMaxW": 114,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241874/intel-core-ultra-5-processor-245t-24m-cache-up-to-5-10-ghz/specifications.html"
   },
   {
@@ -2810,6 +2957,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2,
     "lithography": "TSMC N3B",
     "tdpW": 65,
+    "tdpMaxW": 121,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241674/intel-core-ultra-5-processor-235-24m-cache-up-to-5-00-ghz/specifications.html"
   },
   {
@@ -2829,6 +2977,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2,
     "lithography": "TSMC N3B",
     "tdpW": 35,
+    "tdpMaxW": 114,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241872/intel-core-ultra-5-processor-235t-24m-cache-up-to-5-00-ghz/specifications.html"
   },
   {
@@ -2848,6 +2997,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": null,
     "lithography": "TSMC N3B",
     "tdpW": 65,
+    "tdpMaxW": 121,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241069/intel-core-ultra-5-processor-225f-20m-cache-up-to-4-90-ghz/specifications.html"
   },
   {
@@ -2867,6 +3017,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.8,
     "lithography": "TSMC N3B",
     "tdpW": 65,
+    "tdpMaxW": 121,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241070/intel-core-ultra-5-processor-225-20m-cache-up-to-4-90-ghz/specifications.html"
   },
   {
@@ -2886,6 +3037,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.8,
     "lithography": "TSMC N3B",
     "tdpW": 35,
+    "tdpMaxW": 114,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241870/intel-core-ultra-5-processor-225t-20m-cache-up-to-4-90-ghz/specifications.html"
   },
   {
@@ -2905,6 +3057,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": null,
     "lithography": "TSMC N3B",
     "tdpW": 65,
+    "tdpMaxW": null,
     "sourceUrl": null
   },
   {
@@ -2924,6 +3077,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.35,
     "lithography": "TSMC N3B",
     "tdpW": 45,
+    "tdpMaxW": 115,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241747/intel-core-ultra-9-processor-285h-24m-cache-up-to-5-40-ghz/specifications.html"
   },
   {
@@ -2943,6 +3097,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.3,
     "lithography": "TSMC N3B",
     "tdpW": 28,
+    "tdpMaxW": 115,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241750/intel-core-ultra-7-processor-265h-24m-cache-up-to-5-30-ghz/specifications.html"
   },
   {
@@ -2962,6 +3117,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.25,
     "lithography": "TSMC N3B",
     "tdpW": 28,
+    "tdpMaxW": 115,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241751/intel-core-ultra-7-processor-255h-24m-cache-up-to-5-10-ghz/specifications.html"
   },
   {
@@ -2981,6 +3137,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.25,
     "lithography": "TSMC N3B",
     "tdpW": 28,
+    "tdpMaxW": 115,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241748/intel-core-ultra-5-processor-235h-18m-cache-up-to-5-00-ghz/specifications.html"
   },
   {
@@ -3000,6 +3157,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.2,
     "lithography": "TSMC N3B",
     "tdpW": 28,
+    "tdpMaxW": 115,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241749/intel-core-ultra-5-processor-225h-18m-cache-up-to-4-90-ghz/specifications.html"
   },
   {
@@ -3019,6 +3177,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.1,
     "lithography": "Intel 3",
     "tdpW": 15,
+    "tdpMaxW": 57,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241859/intel-core-ultra-7-processor-265u-12m-cache-up-to-5-30-ghz/specifications.html"
   },
   {
@@ -3038,6 +3197,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.1,
     "lithography": "Intel 3",
     "tdpW": 15,
+    "tdpMaxW": 57,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241860/intel-core-ultra-7-processor-255u-12m-cache-up-to-5-20-ghz/specifications.html"
   },
   {
@@ -3057,6 +3217,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2.05,
     "lithography": "Intel 3",
     "tdpW": 15,
+    "tdpMaxW": 57,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241862/intel-core-ultra-5-processor-235u-12m-cache-up-to-4-90-ghz/specifications.html"
   },
   {
@@ -3076,6 +3237,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2,
     "lithography": "Intel 3",
     "tdpW": 15,
+    "tdpMaxW": 57,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241861/intel-core-ultra-5-processor-225u-12m-cache-up-to-4-80-ghz/specifications.html"
   },
   {
@@ -3095,6 +3257,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 2,
     "lithography": "TSMC N3B",
     "tdpW": 55,
+    "tdpMaxW": 160,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/242297/intel-core-ultra-9-processor-285hx-36m-cache-up-to-5-50-ghz/specifications.html"
   },
   {
@@ -3114,6 +3277,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.9,
     "lithography": "TSMC N3B",
     "tdpW": 55,
+    "tdpMaxW": 160,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/242293/intel-core-ultra-9-processor-275hx-36m-cache-up-to-5-40-ghz/specifications.html"
   },
   {
@@ -3133,6 +3297,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.9,
     "lithography": "TSMC N3B",
     "tdpW": 55,
+    "tdpMaxW": 160,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/242294/intel-core-ultra-7-processor-265hx-30m-cache-up-to-5-30-ghz/specifications.html"
   },
   {
@@ -3152,6 +3317,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.85,
     "lithography": "TSMC N3B",
     "tdpW": 55,
+    "tdpMaxW": 160,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/242292/intel-core-ultra-7-processor-255hx-30m-cache-up-to-5-20-ghz/specifications.html"
   },
   {
@@ -3171,6 +3337,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.8,
     "lithography": "TSMC N3B",
     "tdpW": 55,
+    "tdpMaxW": 160,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/245959/intel-core-ultra-7-processor-251hx-30m-cache-up-to-5-10-ghz/specifications.html"
   },
   {
@@ -3190,6 +3357,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.9,
     "lithography": "TSMC N3B",
     "tdpW": 55,
+    "tdpMaxW": 160,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/242295/intel-core-ultra-5-processor-245hx-24m-cache-up-to-5-10-ghz/specifications.html"
   },
   {
@@ -3209,6 +3377,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.8,
     "lithography": "TSMC N3B",
     "tdpW": 55,
+    "tdpMaxW": 160,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/242296/intel-core-ultra-5-processor-235hx-24m-cache-up-to-5-10-ghz/specifications.html"
   },
   {
@@ -3228,6 +3397,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.3,
     "lithography": "Intel 7",
     "tdpW": 15,
+    "tdpMaxW": 55,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/236795/intel-core-7-processor-150u-12m-cache-up-to-5-40-ghz/specifications.html"
   },
   {
@@ -3247,6 +3417,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.3,
     "lithography": "Intel 7",
     "tdpW": 15,
+    "tdpMaxW": 55,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/236796/intel-core-5-processor-120u-12m-cache-up-to-5-00-ghz/specifications.html"
   },
   {
@@ -3266,6 +3437,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.25,
     "lithography": "Intel 7",
     "tdpW": 15,
+    "tdpMaxW": 55,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/236776/intel-core-3-processor-100u-10m-cache-up-to-4-70-ghz/specifications.html"
   },
   {
@@ -3285,6 +3457,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.55,
     "lithography": "Intel 7",
     "tdpW": 45,
+    "tdpMaxW": 115,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241947/intel-core-9-processor-270h-24m-cache-up-to-5-80-ghz/specifications.html"
   },
   {
@@ -3304,6 +3477,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.55,
     "lithography": "Intel 7",
     "tdpW": 45,
+    "tdpMaxW": 115,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241651/intel-core-7-processor-250h-24m-cache-up-to-5-40-ghz/specifications.html"
   },
   {
@@ -3323,6 +3497,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.55,
     "lithography": "Intel 7",
     "tdpW": 45,
+    "tdpMaxW": 115,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241653/intel-core-7-processor-240h-24m-cache-up-to-5-20-ghz/specifications.html"
   },
   {
@@ -3342,6 +3517,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.5,
     "lithography": "Intel 7",
     "tdpW": 45,
+    "tdpMaxW": 115,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241654/intel-core-5-processor-220h-18m-cache-up-to-4-90-ghz/specifications.html"
   },
   {
@@ -3361,6 +3537,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.4,
     "lithography": "Intel 7",
     "tdpW": 45,
+    "tdpMaxW": 115,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/241652/intel-core-5-processor-210h-12m-cache-up-to-4-80-ghz/specifications.html"
   },
   {
@@ -3380,6 +3557,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.3,
     "lithography": "Intel 7",
     "tdpW": 15,
+    "tdpMaxW": 55,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/238771/intel-core-7-processor-250u-12m-cache-up-to-5-40-ghz/specifications.html"
   },
   {
@@ -3399,6 +3577,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.3,
     "lithography": "Intel 7",
     "tdpW": 15,
+    "tdpMaxW": 55,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/238776/intel-core-5-processor-220u-12m-cache-up-to-5-00-ghz/specifications.html"
   },
   {
@@ -3418,6 +3597,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": null,
     "lithography": "Intel 7",
     "tdpW": 45,
+    "tdpMaxW": 115,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/246028/intel-core-7-processor-230h-24m-cache-up-to-5-20-ghz/specifications.html"
   },
   {
@@ -3437,6 +3617,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": null,
     "lithography": "Intel 7",
     "tdpW": 45,
+    "tdpMaxW": 115,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/246026/intel-core-5-processor-205h-12m-cache-up-to-4-80-ghz/specifications.html"
   },
   {
@@ -3456,6 +3637,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.25,
     "lithography": "Intel 7",
     "tdpW": 15,
+    "tdpMaxW": 55,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/239173/intel-core-3-processor-100ul-10m-cache-up-to-4-50-ghz/specifications.html"
   },
   {
@@ -3475,6 +3657,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.25,
     "lithography": "Intel 7",
     "tdpW": 15,
+    "tdpMaxW": 55,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/239169/intel-core-5-processor-120ul-12m-cache-up-to-4-60-ghz/specifications.html"
   },
   {
@@ -3494,6 +3677,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.25,
     "lithography": "Intel 7",
     "tdpW": 15,
+    "tdpMaxW": 55,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/239171/intel-core-5-processor-130ul-12m-cache-up-to-4-70-ghz/specifications.html"
   },
   {
@@ -3513,6 +3697,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.3,
     "lithography": "Intel 7",
     "tdpW": 15,
+    "tdpMaxW": 55,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/239170/intel-core-7-processor-150ul-12m-cache-up-to-5-00-ghz/specifications.html"
   },
   {
@@ -3532,6 +3717,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.3,
     "lithography": "Intel 7",
     "tdpW": 15,
+    "tdpMaxW": 55,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/239177/intel-core-7-processor-160ul-12m-cache-up-to-5-20-ghz/specifications.html"
   },
   {
@@ -3551,6 +3737,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.3,
     "lithography": "Intel 7",
     "tdpW": 45,
+    "tdpMaxW": 115,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/239939/intel-core-3-processor-100hl-12m-cache-up-to-4-60-ghz/specifications.html"
   },
   {
@@ -3570,6 +3757,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.45,
     "lithography": "Intel 7",
     "tdpW": 45,
+    "tdpMaxW": 95,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/239938/intel-core-5-processor-120hl-18m-cache-up-to-4-70-ghz/specifications.html"
   },
   {
@@ -3589,6 +3777,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.5,
     "lithography": "Intel 7",
     "tdpW": 45,
+    "tdpMaxW": 95,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/239941/intel-core-5-processor-130hl-18m-cache-up-to-4-80-ghz/specifications.html"
   },
   {
@@ -3608,6 +3797,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.5,
     "lithography": "Intel 7",
     "tdpW": 45,
+    "tdpMaxW": 115,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/239937/intel-core-7-processor-150hl-24m-cache-up-to-5-00-ghz/specifications.html"
   },
   {
@@ -3627,6 +3817,7 @@ window.CPU_DATA = [
     "graphicsFreqGHz": 1.5,
     "lithography": "Intel 7",
     "tdpW": 45,
+    "tdpMaxW": 115,
     "sourceUrl": "https://www.intel.com/content/www/us/en/products/sku/239940/intel-core-7-processor-160hl-24m-cache-up-to-5-20-ghz/specifications.html"
   }
 ];

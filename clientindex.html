@@ -4,11 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AMD Ryzen vs Intel Core Client CPU Comparison</title>
-<link rel="stylesheet" href="clientstyles.css?v=20261112d">
+<link rel="stylesheet" href="clientstyles.css?v=20261112g">
+<script>
+  // Apply the saved (or system) colour theme before the page paints, to avoid a flash.
+  (function () {
+    var t = null;
+    try { t = localStorage.getItem("cpu-theme"); } catch (e) {}
+    if (t !== "dark" && t !== "light") {
+      t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    document.documentElement.setAttribute("data-theme", t);
+  })();
+</script>
 </head>
 <body>
 <header class="site-header">
   <a class="home-btn" href="index.html" aria-label="Back to CPU Comparison Hub">&larr; Home</a>
+  <button type="button" class="theme-btn" id="theme-toggle" aria-pressed="false">Dark mode</button>
   <div class="header-inner">
     <h1>Client CPU Comparison</h1>
     <p class="subtitle">AMD Ryzen vs Intel Core / Core Ultra &mdash; full SKU spec sheet</p>
@@ -44,7 +56,12 @@
         </select>
       </label>
 
+      <label class="control heat-toggle" title="Tint each number by where it ranks among all processors: darker = higher">
+        <input type="checkbox" id="heat-toggle" checked> Shade by value
+      </label>
+
       <button id="reset-filters" type="button" class="reset-btn">Reset</button>
+      <button id="copy-link" type="button" class="reset-btn copy-link-btn" title="Copy a link to this exact view: search, filters, sort and the processors selected for comparison">Copy link</button>
       <button id="compare-btn" type="button" class="compare-btn" disabled>Compare Selected (0)</button>
     </div>
   </section>
@@ -64,38 +81,47 @@
   <div class="table-scroll">
     <table id="cpu-table">
       <thead>
-        <tr>
+        <tr class="group-band" aria-hidden="true">
+          <th colspan="5" class="band-id"></th>
+          <th class="g-ai">AI</th>
+          <th colspan="4" class="g-cores">Cores</th>
+          <th colspan="2" class="g-clocks">Clock speed</th>
+          <th class="g-cache">Cache</th>
+          <th colspan="2" class="g-gfx">Graphics</th>
+          <th colspan="2" class="g-power">Process &amp; power</th>
+        </tr>
+        <tr class="col-heads">
           <th class="col-select"><span class="sr-only">Select</span></th>
           <th data-key="vendor" data-type="text">Vendor</th>
           <th data-key="platform" data-type="text">Platform</th>
           <th data-key="generation" data-type="text">Generation</th>
           <th data-key="name" data-type="text">Model</th>
-          <th data-key="npuTops" data-type="num">NPU TOPS</th>
-          <th data-key="pCores" data-type="num" title="AMD: all CPU cores (Zen + Zen c) are counted as Performance Cores; Efficiency / Low Power columns apply to Intel only.">Performance Cores<sup class="th-note">*</sup></th>
-          <th data-key="eCores" data-type="num">Efficiency Cores</th>
-          <th data-key="lpECores" data-type="num">Low Power Efficient Core</th>
-          <th data-key="threads" data-type="num">Threads</th>
-          <th data-key="baseFreqGHz" data-type="num">Base Frequency (GHz)</th>
-          <th data-key="boostFreqGHz" data-type="num">Boost Frequency (GHz)</th>
-          <th data-key="cacheMB" data-type="num" title="AMD: L2 + L3 cache. Intel: L3 (Smart Cache).">Cache Memory (MB)<sup class="th-note">*</sup></th>
-          <th data-key="graphicsModel" data-type="text">Graphics</th>
-          <th data-key="graphicsFreqGHz" data-type="num">Graphics Frequency (GHz, up to)</th>
-          <th data-key="lithography" data-type="text">Processor Technology</th>
-          <th data-key="tdpW" data-type="num">TDP (W)</th>
+          <th data-key="npuTops" data-group="ai" data-type="num">NPU TOPS</th>
+          <th data-key="pCores" data-group="cores" data-type="num" title="AMD: all CPU cores (Zen + Zen c) are counted as Performance Cores; Efficiency / Low Power columns apply to Intel only.">Performance Cores<sup class="th-note">*</sup></th>
+          <th data-key="eCores" data-group="cores" data-type="num">Efficiency Cores</th>
+          <th data-key="lpECores" data-group="cores" data-type="num">Low Power Efficient Core</th>
+          <th data-key="threads" data-group="cores" data-type="num">Threads</th>
+          <th data-key="baseFreqGHz" data-group="clocks" data-type="num">Base Frequency (GHz)</th>
+          <th data-key="boostFreqGHz" data-group="clocks" data-type="num">Boost Frequency (GHz)</th>
+          <th data-key="cacheMB" data-group="cache" data-type="num" title="AMD: L2 + L3 cache. Intel: L3 (Smart Cache).">Cache Memory (MB)<sup class="th-note">*</sup></th>
+          <th data-key="graphicsModel" data-group="gfx" data-type="text">Graphics</th>
+          <th data-key="graphicsFreqGHz" data-group="gfx" data-type="num">Graphics Frequency (GHz, up to)</th>
+          <th data-key="lithography" data-group="power" data-type="text">Processor Technology</th>
+          <th data-key="tdpW" data-group="power" data-type="num" title="Intel: Processor Base Power &ndash; Maximum Turbo Power (sorted and shaded by base power). AMD: default TDP.">TDP (W)<sup class="th-note">&dagger;</sup></th>
         </tr>
       </thead>
       <tbody id="cpu-table-body">
       </tbody>
     </table>
   </div>
-  <p class="table-note"><sup>*</sup> AMD processors have no separate efficiency cores &mdash; all CPU cores (Zen and Zen&nbsp;c) are counted as Performance Cores. AMD cache = L2&nbsp;+&nbsp;L3; Intel cache = L3 (Smart Cache).</p>
+  <p class="table-note"><sup>*</sup> AMD processors have no separate efficiency cores &mdash; all CPU cores (Zen and Zen&nbsp;c) are counted as Performance Cores. AMD cache = L2&nbsp;+&nbsp;L3; Intel cache = L3 (Smart Cache). Cell shading shows where a value ranks across all processors in the list: the darker the tint, the higher the number.<br><sup>&dagger;</sup> Intel TDP is shown as Processor Base Power &ndash; Maximum Turbo Power from Intel ARK (e.g. 15&ndash;57&nbsp;W); sorting and shading use the base power. AMD TDP is the default TDP.</p>
 </main>
 
 <footer class="site-footer">
   <p>Data source: official AMD.com and Intel ARK spec pages. Last verified 12 Nov 2026. Click a model name to open its spec page.</p>
 </footer>
 
-<script src="clientcpus.js?v=20261112d"></script>
-<script src="clientapp.js?v=20261112d"></script>
+<script src="clientcpus.js?v=20261112g"></script>
+<script src="clientapp.js?v=20261112g"></script>
 </body>
 </html>

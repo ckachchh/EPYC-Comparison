@@ -10,8 +10,24 @@
   --text-muted: #767c87;
   --row-hover: #f4f6f9;
   --focus: #2f6fed;
+  --glass: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --cell-muted: #c2c6cd;
+  --code-bg: #eef0f3;
+  --best-ink: #1a4bb0;
+  --scroll-thumb: rgba(15, 23, 42, 0.15);
+  --hover-overlay: rgba(15, 23, 42, 0.045);
+  --shadow-strong: rgba(15, 23, 42, 0.25);
+  color-scheme: light;
   --ink: #0a0c11;
   --ink-2: #12151e;
+  /* Spec-group palette. Red and blue stay reserved for AMD / Intel. */
+  --g-ai: 192 38 211;      --gb-ai: #a21caf;     --gi-ai: #86198f;
+  --g-cores: 124 58 237;   --gb-cores: #6d28d9;  --gi-cores: #5b21b6;
+  --g-clocks: 234 88 12;   --gb-clocks: #c2410c; --gi-clocks: #9a3412;
+  --g-cache: 13 148 136;   --gb-cache: #0f766e;  --gi-cache: #115e59;
+  --g-gfx: 101 163 13;     --gb-gfx: #4d7c0f;    --gi-gfx: #3f6212;
+  --g-power: 202 138 4;    --gb-power: #a16207;  --gi-power: #854d0e;
   --font-display: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -120,11 +136,11 @@ body {
   gap: 10px;
   align-items: center;
   width: 100%;
-  background: rgba(255, 255, 255, 0.72);
+  background: var(--glass);
   backdrop-filter: blur(18px) saturate(180%);
   -webkit-backdrop-filter: blur(18px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  box-shadow: 0 20px 40px -16px rgba(15, 23, 42, 0.25), 0 1px 0 rgba(255, 255, 255, 0.4) inset;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 20px 40px -16px var(--shadow-strong), 0 1px 0 rgba(255, 255, 255, 0.4) inset;
   border-radius: 16px;
   padding: 14px 16px;
 }
@@ -137,6 +153,7 @@ body {
   border-radius: 8px;
   font-size: 14px;
   background: var(--surface);
+  color: var(--text);
   transition: box-shadow 0.15s ease, border-color 0.15s ease;
 }
 
@@ -370,7 +387,7 @@ tbody td.col-select {
 }
 
 .table-scroll::-webkit-scrollbar-thumb {
-  background: rgba(15, 23, 42, 0.15);
+  background: var(--scroll-thumb);
   border-radius: 8px;
 }
 
@@ -384,24 +401,50 @@ table {
   min-width: 760px;
 }
 
-thead th {
+#cpu-table thead {
   position: sticky;
   top: 0;
+  z-index: 3;
+}
+
+thead th {
   background: var(--surface);
   color: var(--text-muted);
   text-align: left;
-  padding: 14px 16px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  padding: 12px 16px;
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 600;
   cursor: pointer;
   user-select: none;
   white-space: nowrap;
-  border-bottom: 1px solid var(--border);
-  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.02);
-  z-index: 2;
+  box-shadow: inset 0 -1px 0 var(--border);
+}
+
+/* Coloured band naming each spec group (acts as the legend) */
+#cpu-table .group-band th {
+  padding: 6px 16px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: default;
+  background: var(--gb);
+  box-shadow: inset 2px 0 0 var(--surface);
+}
+
+#cpu-table .group-band th.band-id {
+  background: var(--surface);
+  box-shadow: none;
+}
+
+#cpu-table .col-heads th[data-group] {
+  color: var(--gi);
+  box-shadow: inset 0 -3px 0 rgb(var(--g));
+}
+
+#cpu-table .col-heads th[data-group]:hover {
+  background: rgb(var(--g) / 0.06);
 }
 
 thead th:hover {
@@ -418,6 +461,61 @@ thead th.sorted {
   color: var(--focus);
 }
 
+#cpu-table .col-heads th[data-group].sorted {
+  color: var(--gi);
+  background: rgb(var(--g) / 0.1);
+}
+
+/* Group colour variables, applied to band cells, headers, body cells, compare panel */
+.g-ai     { --g: var(--g-ai);     --gb: var(--gb-ai);     --gi: var(--gi-ai); }
+.g-cores  { --g: var(--g-cores);  --gb: var(--gb-cores);  --gi: var(--gi-cores); }
+.g-clocks { --g: var(--g-clocks); --gb: var(--gb-clocks); --gi: var(--gi-clocks); }
+.g-cache  { --g: var(--g-cache);  --gb: var(--gb-cache);  --gi: var(--gi-cache); }
+.g-gfx    { --g: var(--g-gfx);    --gb: var(--gb-gfx);    --gi: var(--gi-gfx); }
+.g-power  { --g: var(--g-power);  --gb: var(--gb-power);  --gi: var(--gi-power); }
+th[data-group="ai"]     { --g: var(--g-ai);     --gi: var(--gi-ai); }
+th[data-group="cores"]  { --g: var(--g-cores);  --gi: var(--gi-cores); }
+th[data-group="clocks"] { --g: var(--g-clocks); --gi: var(--gi-clocks); }
+th[data-group="cache"]  { --g: var(--g-cache);  --gi: var(--gi-cache); }
+th[data-group="gfx"]    { --g: var(--g-gfx);    --gi: var(--gi-gfx); }
+th[data-group="power"]  { --g: var(--g-power);  --gi: var(--gi-power); }
+
+/* Body cells: faint group wash, or value shading when "Shade by value" is on */
+#cpu-table tbody td.grp {
+  background: rgb(var(--g) / 0.035);
+}
+
+#cpu-table.heat tbody td.heat-cell {
+  background: rgb(var(--g) / var(--a));
+}
+
+#cpu-table.heat tbody td.heat-top {
+  color: var(--gi);
+  font-weight: 700;
+}
+
+#cpu-table tbody tr:hover td {
+  box-shadow: inset 0 0 0 999px var(--hover-overlay);
+}
+
+.heat-toggle {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.heat-toggle::after {
+  content: "";
+  width: 30px;
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, rgb(var(--g-cores) / 0.1), rgb(var(--g-cores) / 0.5), rgb(var(--g-clocks) / 0.5), rgb(var(--g-cache) / 0.5));
+}
+
 thead th.sorted .sort-indicator {
   opacity: 1;
 }
@@ -429,7 +527,7 @@ tbody td {
 }
 
 tbody tr {
-  border-left: 3px solid transparent;
+  border-left: 4px solid transparent;
   animation: row-in 0.3s ease both;
 }
 
@@ -469,19 +567,19 @@ tbody tr.vendor-intel:hover {
 }
 
 .vendor-badge--amd {
-  background: linear-gradient(135deg, rgba(237, 28, 36, 0.14), rgba(237, 28, 36, 0.05));
-  box-shadow: inset 0 0 0 1px rgba(237, 28, 36, 0.25);
-  color: #b5151b;
+  background: #d9151d;
+  color: #fff;
+  font-weight: 600;
 }
 
 .vendor-badge--intel {
-  background: linear-gradient(135deg, rgba(0, 113, 197, 0.14), rgba(0, 113, 197, 0.05));
-  box-shadow: inset 0 0 0 1px rgba(0, 113, 197, 0.25);
-  color: #0071c5;
+  background: #0068b5;
+  color: #fff;
+  font-weight: 600;
 }
 
 .cell-muted {
-  color: #c2c6cd;
+  color: var(--cell-muted);
 }
 
 .spec-link {
@@ -510,7 +608,7 @@ tbody tr.vendor-intel:hover {
 }
 
 .site-footer code {
-  background: #eef0f3;
+  background: var(--code-bg);
   padding: 1px 5px;
   border-radius: 4px;
   font-family: var(--font-mono);
@@ -533,10 +631,10 @@ tbody tr.vendor-intel:hover {
 
 .compare-panel {
   position: relative;
-  background: rgba(255, 255, 255, 0.78);
+  background: var(--glass);
   backdrop-filter: blur(18px) saturate(180%);
   -webkit-backdrop-filter: blur(18px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--glass-border);
   border-radius: 14px;
   padding: 20px;
   margin-bottom: 20px;
@@ -585,6 +683,7 @@ tbody tr.vendor-intel:hover {
 
 .compare-table thead th {
   position: static;
+  font-weight: 600;
   background: transparent;
   color: var(--text);
   cursor: default;
@@ -634,16 +733,25 @@ tbody tr.vendor-intel:hover {
   font-weight: 500;
   color: var(--text-muted);
   font-family: var(--font-mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
+  font-size: 12px;
+}
+
+.compare-label[class*="g-"] {
+  color: var(--gi);
+  box-shadow: inset 3px 0 0 rgb(var(--g));
+}
+
+.compare-best[class*="g-"] {
+  background: rgb(var(--g) / 0.16);
+  box-shadow: inset 0 0 0 1px rgb(var(--g) / 0.35);
+  color: var(--gi);
 }
 
 .compare-best {
   background: linear-gradient(135deg, rgba(47, 111, 237, 0.12), rgba(124, 58, 237, 0.06));
   box-shadow: inset 0 0 0 1px rgba(47, 111, 237, 0.18);
   font-weight: 700;
-  color: #1a4bb0;
+  color: var(--best-ink);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -675,6 +783,46 @@ tbody tr.vendor-intel:hover {
   transition: background 0.15s ease, border-color 0.15s ease;
 }
 
+.theme-btn {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  z-index: 2;
+  padding: 7px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.theme-btn::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 7px;
+  border-radius: 50%;
+  vertical-align: -1px;
+  background: linear-gradient(90deg, #fff 50%, transparent 50%);
+  box-shadow: inset 0 0 0 1.5px #fff;
+}
+
+.theme-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.copy-link-btn.copied {
+  border-color: rgb(var(--g-cache));
+  color: var(--gi-cache);
+}
+
 .home-btn:hover {
   background: rgba(255, 255, 255, 0.18);
   border-color: rgba(255, 255, 255, 0.5);
@@ -686,6 +834,13 @@ tbody tr.vendor-intel:hover {
 }
 
 @media (max-width: 600px) {
+  .theme-btn {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 0 0 14px 8px;
+  }
+
   .home-btn {
     position: relative;
     top: auto;
@@ -693,3 +848,47 @@ tbody tr.vendor-intel:hover {
     margin-bottom: 14px;
   }
 }
+
+/* ---------- Dark theme ---------- */
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0e131d;
+  --surface: #151b27;
+  --border: #263043;
+  --text: #e4e8ef;
+  --text-muted: #96a0b1;
+  --row-hover: #1b2331;
+  --focus: #6b9bff;
+  --glass: rgba(21, 27, 39, 0.82);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --cell-muted: #465166;
+  --code-bg: #222b3b;
+  --best-ink: #a9c2ff;
+  --scroll-thumb: rgba(255, 255, 255, 0.16);
+  --hover-overlay: rgba(255, 255, 255, 0.05);
+  --shadow-strong: rgba(0, 0, 0, 0.55);
+  /* Lighter group inks so coloured text stays readable on dark cells */
+  --gi-ai: #f0abfc;
+  --gi-cores: #c4b5fd;
+  --gi-clocks: #fdba74;
+  --gi-cache: #5eead4;
+  --gi-gfx: #bef264;
+  --gi-power: #fcd34d;
+}
+
+:root[data-theme="dark"] .theme-btn::before {
+  background: linear-gradient(90deg, transparent 50%, #fff 50%);
+}
+
+:root[data-theme="dark"] .multiselect-panel,
+:root[data-theme="dark"] .table-scroll {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+:root[data-theme="dark"] #cpu-table.heat tbody td.heat-cell {
+  background: rgb(var(--g) / calc(var(--a) * 0.9));
+}
+
+:root[data-theme="dark"] .vendor-badge--amd { background: #e0262d; }
+:root[data-theme="dark"] .vendor-badge--intel { background: #1177c8; }
