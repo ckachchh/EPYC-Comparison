@@ -50,9 +50,9 @@
     { key: "boostFreqGHz", label: "Boost Frequency (GHz)" },
     { key: "cacheMB", label: "Cache Memory (MB)" },
     { key: "graphicsModel", label: "Graphics" },
-    { key: "graphicsFreqGHz", label: "Graphics Frequency (upto)" },
+    { key: "graphicsFreqGHz", label: "Graphics Frequency (GHz, up to)" },
     { key: "lithography", label: "Processor Technology" },
-    { key: "tdpW", label: "TDP" },
+    { key: "tdpW", label: "TDP (W)" },
   ];
 
   function rowId(row) {
